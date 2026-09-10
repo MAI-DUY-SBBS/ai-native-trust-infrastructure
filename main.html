@@ -1,270 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Native Trust Infrastructure</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI-Native Trust Infrastructure — Digital Identity, Cryptographic Trust and Document Signing"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b12"
+    >
+
+    <title>
+        AI-Native Trust Infrastructure
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/styles.css"
+    >
 </head>
+
+
 <body>
-    <div class="app-container">
-        <!-- LEFT SIDEBAR -->
-        <aside class="sidebar">
+
+    <div class="app-shell">
+
+
+        <!-- ==================================================
+             SIDEBAR
+             ================================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
             <div class="sidebar-header">
-                <div class="logo-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-title">AI-NATIVE TRUST</span>
-                    <span class="logo-subtitle">Infrastructure</span>
-                </div>
+
+                <a
+                    href="#"
+                    class="brand"
+                    data-action="go-dashboard"
+                >
+
+                    <div class="brand-mark">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M12 3l7 3v5c0 4.8-3 8-7 10-4-2-7-5.2-7-10V6l7-3z"
+                            ></path>
+
+                            <path
+                                d="M9 12l2 2 4-4"
+                            ></path>
+                        </svg>
+
+                    </div>
+
+
+                    <div class="brand-text">
+
+                        <div class="brand-title">
+                            AI-NATIVE TRUST
+                        </div>
+
+                        <div class="brand-subtitle">
+                            Infrastructure
+                        </div>
+
+                    </div>
+
+                </a>
+
             </div>
 
-            <nav class="sidebar-nav">
-                <a href="#" class="nav-item active">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                    Dashboard
+
+            <nav
+                class="sidebar-nav"
+                aria-label="Main navigation"
+            >
+
+                <div class="nav-label">
+                    Workspace
+                </div>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="#dashboard"
+                    class="nav-item active"
+                    data-view="dashboard"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <rect
+                            x="4"
+                            y="4"
+                            width="6"
+                            height="6"
+                            rx="1"
+                        ></rect>
+
+                        <rect
+                            x="14"
+                            y="4"
+                            width="6"
+                            height="6"
+                            rx="1"
+                        ></rect>
+
+                        <rect
+                            x="4"
+                            y="14"
+                            width="6"
+                            height="6"
+                            rx="1"
+                        ></rect>
+
+                        <rect
+                            x="14"
+                            y="14"
+                            width="6"
+                            height="6"
+                            rx="1"
+                        ></rect>
+                    </svg>
+
+                    <span>
+                        Dashboard
+                    </span>
+
                 </a>
-                <a href="#" class="nav-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    Digital Identities
+
+
+                <!-- Digital Identities -->
+
+                <a
+                    href="#identities"
+                    class="nav-item"
+                    data-view="identities"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle
+                            cx="12"
+                            cy="8"
+                            r="3"
+                        ></circle>
+
+                        <path
+                            d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"
+                        ></path>
+                    </svg>
+
+                    <span>
+                        Digital Identities
+                    </span>
+
                 </a>
-                <a href="#" class="nav-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    Sign Document
+
+
+                <!-- Sign Document -->
+
+                <a
+                    href="#sign"
+                    class="nav-item"
+                    data-view="sign"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M6 3h8l4 4v14H6z"
+                        ></path>
+
+                        <path
+                            d="M14 3v5h5"
+                        ></path>
+
+                        <path
+                            d="M9 15l2 2 4-4"
+                        ></path>
+                    </svg>
+
+                    <span>
+                        Sign Document
+                    </span>
+
                 </a>
-                <a href="#" class="nav-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Verify Signature
+
+
+                <!-- Verify Signature -->
+
+                <a
+                    href="#verify"
+                    class="nav-item"
+                    data-view="verify"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M12 3l7 3v5c0 4.8-3 8-7 10-4-2-7-5.2-7-10V6l7-3z"
+                        ></path>
+
+                        <path
+                            d="M9 12l2 2 4-4"
+                        ></path>
+                    </svg>
+
+                    <span>
+                        Verify Signature
+                    </span>
+
                 </a>
-                <a href="#" class="nav-item">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                    Trust Registry
+
+
+                <!-- Trust Registry -->
+
+                <a
+                    href="#registry"
+                    class="nav-item"
+                    data-view="registry"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <circle
+                            cx="6"
+                            cy="12"
+                            r="2"
+                        ></circle>
+
+                        <circle
+                            cx="18"
+                            cy="6"
+                            r="2"
+                        ></circle>
+
+                        <circle
+                            cx="18"
+                            cy="18"
+                            r="2"
+                        ></circle>
+
+                        <path
+                            d="M8 11l8-4"
+                        ></path>
+
+                        <path
+                            d="M8 13l8 4"
+                        ></path>
+                    </svg>
+
+                    <span>
+                        Trust Registry
+                    </span>
+
                 </a>
+
             </nav>
 
+
+            <!-- Sidebar system status -->
+
             <div class="sidebar-footer">
-                <div class="system-status">
-                    <span class="status-dot"></span>
-                    <span class="status-text">Infrastructure Online</span>
+
+                <div
+                    class="sidebar-system"
+                    data-api-status
+                >
+
+                    <span
+                        class="status-dot offline"
+                    ></span>
+
+                    <span
+                        data-api-status-text
+                    >
+                        Connecting…
+                    </span>
+
                 </div>
-                <div class="version">v2.4.0-stable</div>
+
             </div>
+
         </aside>
 
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <!-- TOP HEADER -->
+
+
+        <!-- ==================================================
+             MAIN AREA
+             ================================================== -->
+
+        <div class="main-area">
+
+
+            <!-- ==================================================
+                 TOP HEADER
+                 ================================================== -->
+
             <header class="top-header">
+
+
                 <div class="header-left">
-                    <h1 class="page-title">AI-Native Trust Infrastructure</h1>
-                    <p class="page-subtitle">Digital Identity & Trust Layer for the AI Era</p>
-                </div>
-                <div class="header-right">
-                    <div class="identity-badge">
-                        <span class="badge-dot"></span>
-                        <span id="headerIdentityStatus">Identity Active</span>
+
+                    <!-- Mobile menu -->
+
+                    <button
+                        type="button"
+                        class="mobile-menu-button"
+                        id="mobileMenuButton"
+                        aria-label="Open navigation"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M4 7h16"
+                            ></path>
+
+                            <path
+                                d="M4 12h16"
+                            ></path>
+
+                            <path
+                                d="M4 17h16"
+                            ></path>
+                        </svg>
+
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <h1
+                            class="page-title"
+                            id="pageTitle"
+                        >
+                            Dashboard
+                        </h1>
+
+                        <div
+                            class="page-subtitle"
+                            id="pageSubtitle"
+                        >
+                            AI-Native Trust Infrastructure
+                        </div>
+
                     </div>
-                    <div class="user-avatar">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
+
                 </div>
+
+
+                <div
+                    class="header-status"
+                    data-api-status
+                >
+
+                    <span
+                        class="status-dot offline"
+                    ></span>
+
+                    <span
+                        data-api-status-text
+                    >
+                        Connecting…
+                    </span>
+
+                </div>
+
             </header>
 
-            <div class="dashboard-grid">
-                <!-- SECTION 1: TRUST OVERVIEW -->
-                <section class="overview-section">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-label">Digital Identities</span>
-                            <span class="stat-value" id="statIdentities">12 Active</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-label">Documents Signed</span>
-                            <span class="stat-value">48</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon success">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <div class="stat-info">
-                            <span class="stat-label">Trust Status</span>
-                            <span class="stat-value success-text">Verified</span>
-                        </div>
-                    </div>
-                </section>
 
-                <!-- SECTION 2: PDF DIGITAL SIGNING -->
-                <section class="signing-section">
-                    <div class="card signing-card">
-                        <div class="card-header">
-                            <h2>SIGN PDF DOCUMENT</h2>
-                            <p>Cryptographically sign a document using your Digital Identity.</p>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="identitySelect">Select Digital Identity</label>
-                            <div class="select-wrapper">
-                                <select id="identitySelect" class="form-select">
-                                    <option value="">Loading identities...</option>
-                                </select>
-                                <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                            </div>
-                        </div>
+            <!-- ==================================================
+                 MAIN CONTENT
+                 ================================================== -->
 
-                        <div class="form-group">
-                            <label>Upload PDF</label>
-                            <div class="drop-zone" id="dropZone">
-                                <input type="file" id="fileInput" accept=".pdf" hidden>
-                                <div class="drop-zone-content" id="dropZoneContent">
-                                    <svg class="upload-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                                    <p class="drop-text">Drop your PDF document here</p>
-                                    <p class="drop-subtext">or <span class="browse-link">Browse Files</span></p>
-                                    <p class="file-specs">Supported format: PDF • Maximum 50 MB</p>
-                                </div>
-                                <div class="file-info hidden" id="fileInfo">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                                    <div class="file-details">
-                                        <span class="file-name" id="fileName">document.pdf</span>
-                                        <span class="file-size" id="fileSize">2.4 MB</span>
-                                    </div>
-                                    <button class="remove-file-btn" id="removeFileBtn" title="Remove file">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+            <main
+                class="main-content"
+                id="mainContent"
+            >
 
-                        <button class="btn-primary" id="signBtn" disabled>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            SIGN DOCUMENT
-                        </button>
+                <!--
 
-                        <!-- LOADING STATE -->
-                        <div class="loading-state hidden" id="loadingState">
-                            <div class="spinner"></div>
-                            <div class="loading-steps">
-                                <div class="step" data-step="1">Reading document</div>
-                                <div class="step" data-step="2">Calculating SHA-256 hash</div>
-                                <div class="step" data-step="3">Signing with RSA-PSS-SHA256</div>
-                                <div class="step" data-step="4">Applying AI-Native Trust Seal</div>
-                                <div class="step" data-step="5">Finalizing trusted document</div>
-                            </div>
-                        </div>
+                    IMPORTANT
 
-                        <!-- ERROR STATE -->
-                        <div class="error-state hidden" id="errorState">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                            <span id="errorMessage">An error occurred during signing.</span>
-                        </div>
+                    main.js renders every application view
+                    inside this container.
 
-                        <!-- SUCCESS STATE -->
-                        <div class="success-state hidden" id="successState">
-                            <div class="success-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <h3>Document Successfully Signed</h3>
-                            
-                            <div class="success-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Document Hash</span>
-                                    <span class="detail-value mono" id="successHash">SHA-256: 81ec41c5618b3c...</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Digital Identity</span>
-                                    <span class="detail-value mono" id="successIdentity">c483f3a2-6301...</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Algorithm</span>
-                                    <span class="detail-value">RSA-PSS-SHA256</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Timestamp</span>
-                                    <span class="detail-value" id="successTimestamp">2026-09-10 16:31 UTC</span>
-                                </div>
-                            </div>
+                    Views:
 
-                            <div class="success-actions">
-                                <button class="btn-primary" id="downloadBtn">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                    DOWNLOAD SIGNED PDF
-                                </button>
-                                <button class="btn-secondary" id="resetBtn">SIGN ANOTHER DOCUMENT</button>
-                            </div>
-                        </div>
-                    </div>
+                    dashboard
+                    identities
+                    sign
+                    verify
+                    registry
 
-                    <!-- TRUST SEAL PREVIEW -->
-                    <div class="card seal-card">
-                        <div class="card-header">
-                            <h2>AI-NATIVE TRUST SEAL</h2>
-                            <p>Cryptographic verification mark applied to the document.</p>
-                        </div>
-                        <div class="seal-container">
-                            <svg viewBox="0 0 200 200" class="trust-seal" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <path id="topCurve" d="M 30,100 A 70,70 0 0,1 170,100" />
-                                    <path id="bottomCurve" d="M 40,100 A 60,60 0 0,0 160,100" />
-                                </defs>
-                                <!-- Outer Ring -->
-                                <circle cx="100" cy="100" r="95" fill="none" stroke="#c83d4b" stroke-width="2" />
-                                <circle cx="100" cy="100" r="92" fill="none" stroke="#c83d4b" stroke-width="1" opacity="0.5" />
-                                
-                                <!-- Inner Ring -->
-                                <circle cx="100" cy="100" r="80" fill="none" stroke="#c83d4b" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.8" />
-                                
-                                <!-- Text -->
-                                <text class="seal-text" fill="#c83d4b" font-size="11" font-weight="600" letter-spacing="2">
-                                    <textPath href="#topCurve" startOffset="50%" text-anchor="middle">AI-NATIVE TRUST INFRASTRUCTURE</textPath>
-                                </text>
-                                <text class="seal-text" fill="#c83d4b" font-size="10" font-weight="500" letter-spacing="1.5">
-                                    <textPath href="#bottomCurve" startOffset="50%" text-anchor="middle">DIGITALLY SIGNED</textPath>
-                                </text>
-                                
-                                <!-- Center AI Symbol -->
-                                <g transform="translate(100, 100)">
-                                    <polygon points="0,-25 22,-12 22,12 0,25 -22,12 -22,-12" fill="none" stroke="#c83d4b" stroke-width="1.5" opacity="0.9"/>
-                                    <circle cx="0" cy="0" r="8" fill="#c83d4b" opacity="0.2"/>
-                                    <circle cx="0" cy="0" r="4" fill="#c83d4b"/>
-                                    <line x1="0" y1="-8" x2="0" y2="-25" stroke="#c83d4b" stroke-width="1"/>
-                                    <line x1="7" y1="-4" x2="22" y2="-12" stroke="#c83d4b" stroke-width="1"/>
-                                    <line x1="7" y1="4" x2="22" y2="12" stroke="#c83d4b" stroke-width="1"/>
-                                    <line x1="0" y1="8" x2="0" y2="25" stroke="#c83d4b" stroke-width="1"/>
-                                    <line x1="-7" y1="4" x2="-22" y2="12" stroke="#c83d4b" stroke-width="1"/>
-                                    <line x1="-7" y1="-4" x2="-22" y2="-12" stroke="#c83d4b" stroke-width="1"/>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                </section>
+                -->
 
-                <!-- TRUST PHILOSOPHY SECTION -->
-                <section class="philosophy-section">
-                    <div class="philosophy-content">
-                        <h3>Trust for the AI Era</h3>
-                        <p>In the age of artificial intelligence, digital identity and cryptographic verification become foundational infrastructure for trusted knowledge.</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+                <div
+                    id="viewContainer"
+                    class="view-container"
+                >
+
+                    <!--
+                        Initial fallback shown before
+                        JavaScript renders Dashboard.
+                    -->
+
+                    <section
+                        class="view-section"
+                    >
+
+                        <article class="card">
+
+                            <span class="eyebrow">
+                                AI-NATIVE TRUST
+                            </span>
+
+                            <h2>
+                                Loading Trust Infrastructure…
+                            </h2>
+
+                            <p class="card-description">
+                                Initializing digital identity
+                                and cryptographic trust services.
+                            </p>
+
+                        </article>
+
+                    </section>
+
+                </div>
+
+            </main>
+
+        </div>
+
     </div>
 
-    <script src="main.js"></script>
+
+
+    <!-- ======================================================
+         TOAST CONTAINER
+         ====================================================== -->
+
+    <div
+        id="toastContainer"
+        class="toast-container"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+
+    <!-- ======================================================
+         APPLICATION JAVASCRIPT
+         ====================================================== -->
+
+    <script src="/main.js"></script>
+
+
+    <!-- ======================================================
+         MOBILE NAVIGATION
+         ====================================================== -->
+
+    <script>
+
+        /*
+         * Small shell-level mobile navigation.
+         *
+         * The main application logic remains in main.js.
+         * This only controls opening / closing the sidebar.
+         */
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            () => {
+
+                const sidebar =
+                    document.getElementById(
+                        'sidebar'
+                    );
+
+                const menuButton =
+                    document.getElementById(
+                        'mobileMenuButton'
+                    );
+
+
+                if (
+                    !sidebar ||
+                    !menuButton
+                ) {
+                    return;
+                }
+
+
+                menuButton.addEventListener(
+                    'click',
+                    () => {
+
+                        sidebar.classList.toggle(
+                            'open'
+                        );
+
+                    }
+                );
+
+
+                document.addEventListener(
+                    'click',
+                    (event) => {
+
+                        const navItem =
+                            event.target.closest(
+                                '.nav-item'
+                            );
+
+                        if (
+                            navItem &&
+                            window.innerWidth <= 820
+                        ) {
+
+                            sidebar.classList.remove(
+                                'open'
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
 </body>
+
 </html>
