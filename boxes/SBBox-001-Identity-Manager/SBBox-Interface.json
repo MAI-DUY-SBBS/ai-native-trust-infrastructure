@@ -1,0 +1,71 @@
+{
+  "sbbs_version": "1.0",
+
+  "box_id": "SBBox-001",
+
+  "box_name": "Identity Manager",
+
+  "version": "1.0.0",
+
+  "description": "Manages personal digital identities in the AI Native Trust Infrastructure.",
+
+  "inputs": {
+    "identity": {
+      "identity_id": "string",
+      "full_name": "string",
+      "email": "string",
+      "organization": "string",
+      "country": "string"
+    }
+  },
+
+  "operations": {
+
+    "create_identity": {
+      "input": {
+        "full_name": "string",
+        "email": "string",
+        "organization": "string",
+        "country": "string"
+      },
+
+      "output": {
+        "identity_id": "string",
+        "status": "string"
+      }
+    },
+
+    "get_identity": {
+      "input": {
+        "identity_id": "string"
+      },
+
+      "output": {
+        "identity": "object"
+      }
+    },
+
+    "update_identity": {
+      "input": {
+        "identity_id": "string",
+        "identity_data": "object"
+      },
+
+      "output": {
+        "status": "string"
+      }
+    },
+
+    "delete_identity": {
+      "input": {
+        "identity_id": "string"
+      },
+
+      "output": {
+        "status": "string"
+      }
+    }
+
+  }
+
+}

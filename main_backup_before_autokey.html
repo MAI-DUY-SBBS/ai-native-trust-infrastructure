@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI-Native Trust Infrastructure</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        header {
+            background: #111827;
+            padding: 20px 40px;
+            border-bottom: 1px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #334155;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #38bdf8;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: white;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #475569;
+            background: #0f172a;
+            color: white;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .success {
+            background: #059669;
+        }
+
+        .danger {
+            background: #dc2626;
+        }
+
+        #output {
+            margin-top: 30px;
+            background: #020617;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            color: #a7f3d0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>AI-Native Trust Infrastructure</h1>
+    <p>Identity • Cryptography • Digital Signature • Verification</p>
+</header>
+
+<div class="container">
+
+    <div class="grid">
+
+        <!-- CREATE IDENTITY -->
+
+        <div class="card">
+
+            <h2>Create Identity</h2>
+
+            <input
+                id="name"
+                placeholder="Name"
+            >
+
+            <input
+                id="email"
+                placeholder="Email"
+            >
+
+            <input
+                id="organization"
+                placeholder="Organization"
+            >
+
+            <button onclick="createIdentity()">
+                Create Identity
+            </button>
+
+        </div>
+
+
+        <!-- LIST IDENTITIES -->
+
+        <div class="card">
+
+            <h2>Identity Registry</h2>
+
+            <p>
+                View all registered digital identities.
+            </p>
+
+            <button
+                class="success"
+                onclick="listIdentities()"
+            >
+                Load Identities
+            </button>
+
+        </div>
+
+
+        <!-- SIGN DATA -->
+
+        <div class="card">
+
+            <h2>Sign Data</h2>
+
+            <input
+                id="signIdentityId"
+                placeholder="Identity ID"
+            >
+
+            <textarea
+                id="signMessage"
+                placeholder="Message to sign"
+            ></textarea>
+
+            <button onclick="signData()">
+                Sign Message
+            </button>
+
+        </div>
+
+
+        <!-- VERIFY SIGNATURE -->
+
+        <div class="card">
+
+            <h2>Verify Signature</h2>
+
+            <input
+                id="verifyIdentityId"
+                placeholder="Identity ID"
+            >
+
+            <textarea
+                id="verifyMessage"
+                placeholder="Original Message"
+            ></textarea>
+
+            <textarea
+                id="verifySignature"
+                placeholder="Digital Signature"
+            ></textarea>
+
+            <button
+                class="success"
+                onclick="verifySignature()"
+            >
+                Verify Signature
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="output">
+System ready.
+    </div>
+
+</div>
+
+
+<footer>
+    AI-Native Trust Infrastructure
+</footer>
+
+
+<script>
+
+const API_BASE = "http://127.0.0.1:8000";
+
+
+function showOutput(data) {
+
+    document.getElementById("output").textContent =
+        JSON.stringify(data, null, 2);
+
+}
+
+
+/* =========================
+   CREATE IDENTITY
+========================= */
+
+async function createIdentity() {
+
+    const name =
+        document.getElementById("name").value;
+
+    const email =
+        document.getElementById("email").value;
+
+    const organization =
+        document.getElementById("organization").value;
+
+
+    try {
+
+        const response = await fetch(
+
+            `${API_BASE}/api/identities?` +
+
+            new URLSearchParams({
+                name,
+                email,
+                organization
+            }),
+
+            {
+                method: "POST"
+            }
+
+        );
+
+
+        const data =
+            await response.json();
+
+        showOutput(data);
+
+    }
+
+    catch (error) {
+
+        showOutput({
+            error: error.message
+        });
+
+    }
+
+}
+
+
+/* =========================
+   LIST IDENTITIES
+========================= */
+
+async function listIdentities() {
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE}/api/identities`
+            );
+
+
+        const data =
+            await response.json();
+
+        showOutput(data);
+
+    }
+
+    catch (error) {
+
+        showOutput({
+            error: error.message
+        });
+
+    }
+
+}
+
+
+/* =========================
+   SIGN DATA
+========================= */
+
+async function signData() {
+
+    const identityId =
+        document.getElementById(
+            "signIdentityId"
+        ).value;
+
+
+    const message =
+        document.getElementById(
+            "signMessage"
+        ).value;
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                `${API_BASE}/api/identities/` +
+                `${identityId}/sign?` +
+
+                new URLSearchParams({
+                    message
+                }),
+
+                {
+                    method: "POST"
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+        showOutput(data);
+
+    }
+
+    catch (error) {
+
+        showOutput({
+            error: error.message
+        });
+
+    }
+
+}
+
+
+/* =========================
+   VERIFY SIGNATURE
+========================= */
+
+async function verifySignature() {
+
+    const identityId =
+        document.getElementById(
+            "verifyIdentityId"
+        ).value;
+
+
+    const message =
+        document.getElementById(
+            "verifyMessage"
+        ).value;
+
+
+    const signature =
+        document.getElementById(
+            "verifySignature"
+        ).value;
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                `${API_BASE}/api/identities/` +
+                `${identityId}/verify?` +
+
+                new URLSearchParams({
+                    message,
+                    signature
+                }),
+
+                {
+                    method: "POST"
+                }
+
+            );
+
+
+        const data =
+            await response.json();
+
+        showOutput(data);
+
+    }
+
+    catch (error) {
+
+        showOutput({
+            error: error.message
+        });
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

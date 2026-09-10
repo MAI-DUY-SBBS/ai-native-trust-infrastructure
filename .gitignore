@@ -1,0 +1,68 @@
+# ==========================================
+# AI-Native Trust Infrastructure
+# Git Security Rules
+# ==========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Private cryptographic keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Local identity data
+data/identities/
+data/keys/
+data/certificates/
+
+# Signed documents / uploaded documents
+data/signed_documents/
+
+# Trust registry - local runtime data
+data/trust_registry/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Python test/cache
+.pytest_cache/
+.mypy_cache/
+
+# Generated files
+dist/
+build/
+*.egg-info/

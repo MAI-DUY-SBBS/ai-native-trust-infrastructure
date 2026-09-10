@@ -1,0 +1,81 @@
+{
+  "sbbs_version": "1.0",
+
+  "box_id": "SBBox-002",
+
+  "box_name": "Key Manager",
+
+  "version": "1.0.0",
+
+  "description": "Manages cryptographic key pairs for digital identity and document signing.",
+
+  "capabilities": [
+    "generate_key_pair",
+    "save_private_key",
+    "load_private_key",
+    "save_public_key",
+    "get_key_info"
+  ],
+
+  "operations": {
+
+    "generate_key_pair": {
+      "input": {
+        "key_type": "RSA",
+        "key_size": 3072
+      },
+
+      "output": {
+        "status": "string",
+        "private_key_reference": "string",
+        "public_key_reference": "string"
+      }
+    },
+
+    "save_private_key": {
+      "input": {
+        "private_key": "cryptographic_key",
+        "identity_id": "string"
+      },
+
+      "output": {
+        "status": "string",
+        "key_reference": "string"
+      }
+    },
+
+    "load_private_key": {
+      "input": {
+        "key_reference": "string"
+      },
+
+      "output": {
+        "private_key": "cryptographic_key"
+      }
+    },
+
+    "get_public_key": {
+      "input": {
+        "identity_id": "string"
+      },
+
+      "output": {
+        "public_key": "cryptographic_key"
+      }
+    },
+
+    "get_key_info": {
+      "input": {
+        "key_reference": "string"
+      },
+
+      "output": {
+        "algorithm": "string",
+        "key_size": "number",
+        "created_at": "string"
+      }
+    }
+
+  }
+
+}
