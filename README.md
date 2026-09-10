@@ -82,9 +82,7 @@ Tôi   đang dùng một web ký PDF làm “hạt giống” để xây một
 
  
 
-Đúng ạ. Ta làm một lần duy nhất: anh copy toàn bộ một cell Markdown dưới đây, dán vào
-nano README.md
-. Nội dung này được viết cho đúng tinh thần Reference Implementation, không phải Python project thông thường.
+Đúng tinh thần Reference Implementation, không phải Python project thông thường.
 
 # AI-Native Trust Infrastructure
 
