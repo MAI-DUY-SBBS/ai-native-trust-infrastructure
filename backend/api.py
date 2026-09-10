@@ -120,18 +120,25 @@ TRUST_REGISTRY_DIR.mkdir(
 
 @app.get("/")
 def root():
-
-    return {
-        "status": "online",
-        "system": "AI Native Trust Infrastructure",
-        "version": "0.2.0",
-        "message": (
-            "Trust Infrastructure Backend is running"
-        )
-    }
+    return FileResponse(BASE_DIR / "main.html")
 
 
-# ============================================================
+@app.get("/main.js")
+def main_js():
+    return FileResponse(
+        BASE_DIR / "main.js",
+        media_type="application/javascript"
+    )
+
+
+@app.get("/styles.css")
+def styles_css():
+    return FileResponse(
+        BASE_DIR / "styles.css",
+        media_type="text/css"
+    )
+
+
 # HEALTH CHECK
 # ============================================================
 
