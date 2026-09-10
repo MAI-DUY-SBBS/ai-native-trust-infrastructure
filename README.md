@@ -901,6 +901,102 @@ This is not the finished infrastructure.
 
 It is the first working seed of one.
 
+
+
+## Privacy-Preserving Digital Actions
+
+
+A future direction of AI-Native Trust Infrastructure is to separate
+**identity verification from the cryptographic authorization of an action**.
+
+
+In conventional digital signatures, the identity of the signer is directly
+bound to the signature:
+
+
+Identity → Signature → Document
+
+
+However, some digital activities require a different trust model. A system
+may need to verify that a participant is **eligible and authorized to act**
+without necessarily revealing who performed the specific action.
+
+
+This leads to a privacy-preserving architecture:
+
+
+Identity
+   ↓
+Eligibility Verification
+   ↓
+Anonymous / Pseudonymous Credential
+   ↓
+Digital Action
+   ↓
+Cryptographic Proof
+   ↓
+Verifiable Audit
+
+
+Such an architecture could support future applications including:
+
+
+- privacy-preserving electronic voting;
+- anonymous or pseudonymous surveys;
+- confidential social and public investigations;
+- whistleblowing and protected reporting;
+- anonymous participation in digital governance;
+- other verifiable digital actions where eligibility must be proven
+  without unnecessarily revealing personal identity.
+
+
+The key architectural principle is:
+
+
+> **Trust does not necessarily require disclosure of identity.**
+
+
+The system should be able to establish properties such as:
+
+
+- the participant is eligible;
+- the participant is authorized;
+- the action is authentic;
+- the action has not been altered;
+- the participant cannot perform the same action more than once;
+
+
+while, where required, preserving the privacy of the participant's identity.
+
+
+This direction may involve future research into **anonymous credentials,
+blind signatures, cryptographic commitments, zero-knowledge proofs,
+pseudonymous identities, and privacy-preserving verifiable systems**.
+
+
+### Conceptual Evolution
+
+
+The long-term architecture can evolve from:
+
+
+Identity → Key → Certificate → Signature
+
+
+toward:
+
+
+Identity → Eligibility → Anonymous Credential → Verifiable Action
+
+
+This is a research direction for future versions of the infrastructure,
+not a feature claim of the current PDF-signing prototype.
+Trust does not necessarily require disclosure of identity.
+
+
+
+
+
 Author
 
 Dr.rer.nat.DUYMT
